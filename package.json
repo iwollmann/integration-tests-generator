@@ -5,10 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "hygen": "^5.0.3"
+    "hygen": "^5.0.3",
+    "yargs": "^15.3.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "node index.js"
   },
