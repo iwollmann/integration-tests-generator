@@ -5,3 +5,4 @@ For testing this script run:
 ```zsh 
 npm start -- --sample ./Insomnia_sample.json
 ```
+![](assets/demo.gif)
