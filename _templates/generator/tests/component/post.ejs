@@ -1,3 +1,4 @@
 const response = await request(app)
             .post('')
-            .send();
+            .send()
+            .expect(200);

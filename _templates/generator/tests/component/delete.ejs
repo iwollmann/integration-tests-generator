@@ -1,3 +1,4 @@
 const response = await request(app)
             .delete('')
-            .send();
+            .send()
+            .expect(204);
