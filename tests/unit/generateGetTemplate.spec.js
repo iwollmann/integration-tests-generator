@@ -18,7 +18,40 @@ describe('Get Template', () =>{
             mock,
             (err, html) => {
                 expect(err).toBe(null);
-                expect(html).toContain('Content-Type:application/json');
+                expect(html).toContain('Content-Type: \"application/json\"');
+        });
+    }),
+    it('Should not include headers when request no request headers exists', () => {
+        const mock = { 
+            request: {
+                name: 'List Test',
+            }
+        }
+
+        const sut = ejs.renderFile(templatePath, 
+            mock,
+            (err, html) => {
+                expect(err).toBe(null);
+                expect(html).not.toContain('headers');
+        });
+    })
+
+    it('Should include headers with empty value correctly', () => {
+        const mock = { 
+            request: {
+                name: 'List Test',
+                headers: [{ 
+                    name: 'x-custom-header',
+                    value:  ''
+                }],
+            }
+        }
+
+        const sut = ejs.renderFile(templatePath, 
+            mock,
+            (err, html) => {
+                expect(err).toBe(null);
+                expect(html).toContain('x-custom-header: \"\"');
         });
     })
 })

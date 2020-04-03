@@ -1,6 +1,9 @@
 const response = await request(app)
-            .get('<%= request.name %>', { headers: 
-            <%= request.headers.map(x=> '{ '+  x.name + ':' + x.value + '}') %> 
-            })
+            .get('<%= request.name %>'
+            <% if(request.headers) { %> 
+            , { headers: 
+            <%- request.headers.map(x=> '{ '+  x.name + ': "' + x.value + '" }') %> }
+            <% } %> 
+            )
             .send()
             .expect(200);

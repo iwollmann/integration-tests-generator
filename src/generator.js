@@ -1,4 +1,5 @@
 const { exec } = require('child_process');
+// const normalize = require('./normalizer');
 
 module.exports = async function generate(resources) {
     let results = [];
@@ -15,7 +16,7 @@ module.exports = async function generate(resources) {
     unparentRequests.forEach(r => {
         results.push({ group : r, requests: [ r ]});
     });
-    
+
     try {
         results.forEach(result => {
             exec(`hygen generator tests '${encodeURIComponent(JSON.stringify(result))}'`, (error, stdout, stderr) => {
