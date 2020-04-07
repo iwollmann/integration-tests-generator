@@ -6,3 +6,7 @@ For testing this script run:
 npm start -- --sample ./Insomnia_sample.json
 ```
 ![](assets/demo.gif)
+
+# Architecture
+
+![](docs/architecture_diagram.png)
