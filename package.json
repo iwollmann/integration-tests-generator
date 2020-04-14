@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "fs": "^0.0.1-security",
+    "fs": "0.0.1-security",
     "hygen": "^5.0.3",
+    "path": "^0.12.7",
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "jest": "^25.2.4"
+    "@types/node": "^13.11.1",
+    "jest": "^25.2.4",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "node index.js",

@@ -1,6 +1,7 @@
-const { exec } = require('child_process');
+import { exec } from 'child_process';
+import { TemplateResult } from './definitions/Request';
 
-module.exports = function generate(results) {
+export default function generate(results: TemplateResult[]) {
     try {
         results.forEach(result => {
             exec(`hygen generator tests '${encodeURIComponent(JSON.stringify(result))}'`, (error, stdout, stderr) => {
